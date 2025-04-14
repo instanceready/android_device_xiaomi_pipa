@@ -17,6 +17,19 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
 # Inherit keys
 # $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
+# Device config
+TARGET_ENABLE_BLUR := true
+
+# Gapps
+WITH_GMS := true
+
+# GAPPS (valid only for GAPPS builds)
+TARGET_SUPPORTS_QUICK_TAP := false
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_MATLOG := true
+
 PRODUCT_NAME := lineage_pipa
 PRODUCT_DEVICE := pipa
 PRODUCT_MANUFACTURER := Xiaomi
@@ -24,18 +37,8 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Pad 6
 
 PRODUCT_CHARACTERISTICS := tablet
-TARGET_SUPPORTS_QUICK_TAP := false
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-# RisingOS
-WITH_GMS := true
-TARGET_CORE_GMS := true
-TARGET_CORE_GMS_EXTRAS := true
-TARGET_ENABLE_BLUR := true
-TARGET_INCLUDE_GOOGLE_DIALER := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
-RISING_MAINTAINER=YuvarajAF
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=Xiaomi/pipa_global/pipa:13/RKQ1.211001.001/V816.0.7.0.UMZMIXM:user/release-keys
