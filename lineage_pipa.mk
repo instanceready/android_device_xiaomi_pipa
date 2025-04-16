@@ -17,18 +17,20 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
 # Inherit keys
 $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
-# Device config
+# RisingOS config
 TARGET_ENABLE_BLUR := true
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon 870" \
+    RisingMaintainer="YuvarajAF"
+
+RISING_MAINTAINER := YuvarajAF
 
 # Gapps
 WITH_GMS := true
-
-# GAPPS (valid only for GAPPS builds)
-TARGET_SUPPORTS_QUICK_TAP := false
-TARGET_SUPPORTS_CALL_RECORDING := true
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-TARGET_INCLUDE_MATLOG := true
+TARGET_CORE_GMS := true
+TARGET_CORE_GMS_EXTRAS := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true 
+TARGET_INCLUDE_GOOGLE_DIALER := true
 
 PRODUCT_NAME := lineage_pipa
 PRODUCT_DEVICE := pipa
