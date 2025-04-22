@@ -17,9 +17,6 @@ $(call inherit-product, device/xiaomi/pipa/device.mk)
 # Inherit keys
 $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 
-# UDFPS animations
-EXTRA_UDFPS_ANIMATIONS := true
-
 # Device config
 TARGET_ENABLE_BLUR := true
 
