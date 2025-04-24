@@ -11,6 +11,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit some common lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
+#Gms
+$(call inherit-product-if-exists, vendor/pixel/gms/products/gms.mk)
+
 # Inherit from pipa device
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
@@ -28,7 +31,7 @@ TARGET_SUPPORTS_QUICK_TAP := false
 TARGET_SUPPORTS_CALL_RECORDING := true
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
-TARGET_INCLUDE_MATLOG := true
+TARGET_INCLUDE_MATLOG := false
 
 PRODUCT_NAME := lineage_pipa
 PRODUCT_DEVICE := pipa
